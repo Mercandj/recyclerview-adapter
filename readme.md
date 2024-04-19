@@ -2,13 +2,12 @@
 
 [![](https://jitpack.io/v/Mercandj/recyclerview-adapter.svg)](https://jitpack.io/#Mercandj/recyclerview-adapter)
 
-## Why?
+## Why and what?
 
-On Android, it's not built-in to support multi type on RecyclerView.
+- Why: On Android, it's not built-in to support multi type on RecyclerView.
+- What: A light weight library to support multi type and decoupling Rows/Cells from the list. 
 
-## What?
-
-A light weight library to support multi type and decoupling Rows/Cells from the list.
+----
 
 ## How to integrate?
 
@@ -37,7 +36,8 @@ dependencies {
 class CatRowViewAdapterDelegate :
     AbsListItemAdapterDelegate<Any, Any, CatRowViewAdapterDelegate.ViewHolder>() {
 
-    override fun isForViewType(item: Any, items: List<Any>, position: Int) = item is CatRowViewModel
+    override fun isForViewType(item: Any, items: List<Any>, position: Int) =
+        item is CatRowViewModel
 
     override fun onCreateViewHolder(parent: ViewGroup): ViewHolder {
         val view = CatRowView(parent.context)
@@ -82,7 +82,7 @@ class AnimalsActivityAdapter : ListDelegationAdapter<List<Any>>() {
 
     init {
         delegatesManager.addDelegate(CatRowViewAdapterDelegate())
-            .addDelegate(DogRowViewAdapterDelegate())
+            .addDelegate(DogRowViewAdapterDelegate()) // Do the same as the Cat but for dogs
     }
 
     fun setViewModels(viewModels: List<Any>) {
@@ -113,6 +113,8 @@ override fun onCreate(savedInstanceState: Bundle?) {
     )
 }
 ```
+
+----
 
 ## Sources
 
