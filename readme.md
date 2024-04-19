@@ -47,6 +47,6 @@ allprojects {
 
 ```groovy
 dependencies {
-    implementation("com.github.Mercandj:recyclerview-adapter:1.00.00")
+    implementation("com.github.Mercandj:recyclerview-adapter:1.00.03")
 }
 ```
