@@ -1,0 +1,4 @@
+# https://jitpack.io/#Mercandj/recyclerview-adapter
+# HOW TO https://dev.to/vtsen/how-to-publish-android-library-on-jitpackio-with-github-50n1
+jdk:
+  - openjdk11
